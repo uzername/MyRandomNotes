@@ -28,7 +28,7 @@ To resize the converted image, you can supply the -resize option:
 ```
 convert -density 150 presentation.pdf[0] -quality 90 -resize 50% test.jpg
 ```
-### how to compress jpg and generate pdf from set of images (we get very small pdf, may be less than 2Mb per 10 pages with those settings)
+### How to compress jpg and generate pdf from set of images (we get very small pdf, may be less than 2Mb per 10 pages with those settings)
 
 Here are two commands :
 ```
