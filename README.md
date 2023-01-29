@@ -1,2 +1,37 @@
-# MyRandomNotes
-My Random Notes
+# Here are my random notes
+### Batch resize images jpg from powershell using image magick
+
+run ps script from your folder
+
+```
+foreach($f in $files) {
+ $outfile= $f.DirectoryName+"\"+$f.BaseName+"R"+$f.Extension
+ magick convert $f.FullName -resize 30%% $outfile
+}
+```
+
+### Convert PDF to JPEG
+
+https://jdhao.github.io/2019/11/20/convert_pdf_to_image_imagemagick/
+
+Using Image Magick `magick  -density 150 presentation.pdf -quality 90 output-%3d.jpg`
+
+The generated images will be named output-001.jpg, output-002.jpg
+
+To convert a single page of PDF to image, use the following command:
+```
+convert -density 150 presentation.pdf[0] -quality 90 test.jpg
+```
+The number inside the bracket is used to select a page. Note that the page index starts at 0 instead of 1.
+
+To resize the converted image, you can supply the -resize option:
+```
+convert -density 150 presentation.pdf[0] -quality 90 -resize 50% test.jpg
+```
+### how to compress jpg and generate pdf from set of images (we get very small pdf, may be less than 2Mb per 10 pages with those settings)
+
+Here are two commands :
+```
+magick convert %1.JPG -sampling-factor 4:2:0 -strip -quality 55 -interlace Plane -gaussian-blur 0.05 -colorspace RGB -resize 56%% %1Optimized.jpg
+magick convert *Optimized.jpg %1.pdf
+```
