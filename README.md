@@ -35,3 +35,13 @@ Here are two commands :
 magick convert %1.JPG -sampling-factor 4:2:0 -strip -quality 55 -interlace Plane -gaussian-blur 0.05 -colorspace RGB -resize 56%% %1Optimized.jpg
 magick convert *Optimized.jpg %1.pdf
 ```
+
+### How to check print server logs
+
+Step 1: Enable Logging. 
+
+In Event Viewer dashboard, click Applications and Services Logs --> Microsoft --> Windows --> Print Service --> Operational. Right click Operational, select properties. Check the Enable logging box. Click Apply and Ok. Print reports logging is now enabled.
+
+Step 2: View it in Event Viewer.
+
+In Event Viewer dashboard, click Applications and Services Logs --> Microsoft --> Windows --> Print Service --> Operational. Double click Operational. All print events can be viewed here.
